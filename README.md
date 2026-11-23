@@ -33,15 +33,15 @@ Run the scripts in order from a single working directory inside the SRE. Each sc
 
 | Script | What it does | Thesis |
 |---|---|---|
-| `R/00_download_producer_list.R` | Queries an MCL producer list with batching below the 100K-results limit and records list membership (provenance). | 5.1.2.2 |
-| `R/01_build_dataset.R` | Merges the separate downloads, de-duplicates posts and maps producer lists to the three groups. | 5.1.2.2 |
-| `R/02_clean_and_impute.R` | Runs integrity checks and resolves overlapping list membership. Applies the study window, imputes censored views group by group and builds the weekly series. | 5.1.2.2–5.1.2.3, Tables 5.3–5.4 |
-| `R/03_enrich_account_info.R` | Adds account metadata from the MCL preview endpoints. | — |
-| `R/04_producer_list_mapping.R` | Checks every account against the producer lists. | — |
-| `R/05_breakpoint_analysis.R` | Detects and maps breakpoints (T1–T3), compares phases (Kruskal–Wallis, Dunn with Bonferroni correction), looks at election windows and runs a total-reach robustness check. | 5.1.2.4, 5.1.3.1, Tables 5.5–5.9b, Figures 5.1–5.3, Appendix B |
-| `R/08_amplification_engagement_to_views.R` | Fixed-effects OLS of log(views+1) on log(engagement+1) × phase × group. | 5.1.3.2, Table 5.10, Appendix C (C1, C3-A) |
-| `R/09_activation_views_to_engagement.R` | The mirror models: log(engagement+1) on log(views+1) × phase × group. | 5.1.3.3, Table 5.11, Appendix C (C2, C3-B) |
-| `R/10_plot_feedback_loop.R` | Plots the elasticities of 08 and 09 by phase and group, with 95% confidence bands. | Figures 5.4–5.5 |
+| `scripts/00_download_producer_list.R` | Queries an MCL producer list with batching below the 100K-results limit and records list membership (provenance). | 5.1.2.2 |
+| `scripts/01_build_dataset.R` | Merges the separate downloads, de-duplicates posts and maps producer lists to the three groups. | 5.1.2.2 |
+| `scripts/02_clean_and_impute.R` | Runs integrity checks and resolves overlapping list membership. Applies the study window, imputes censored views group by group and builds the weekly series. | 5.1.2.2–5.1.2.3, Tables 5.3–5.4 |
+| `scripts/03_enrich_account_info.R` | Adds account metadata from the MCL preview endpoints. | — |
+| `scripts/04_producer_list_mapping.R` | Checks every account against the producer lists. | — |
+| `scripts/05_breakpoint_analysis.R` | Detects and maps breakpoints (T1–T3), compares phases (Kruskal–Wallis, Dunn with Bonferroni correction), looks at election windows and runs a total-reach robustness check. | 5.1.2.4, 5.1.3.1, Tables 5.5–5.9b, Figures 5.1–5.3, Appendix B |
+| `scripts/08_amplification_engagement_to_views.R` | Fixed-effects OLS of log(views+1) on log(engagement+1) × phase × group. | 5.1.3.2, Table 5.10, Appendix C (C1, C3-A) |
+| `scripts/09_activation_views_to_engagement.R` | The mirror models: log(engagement+1) on log(views+1) × phase × group. | 5.1.3.3, Table 5.11, Appendix C (C2, C3-B) |
+| `scripts/10_plot_feedback_loop.R` | Plots the elasticities of 08 and 09 by phase and group, with 95% confidence bands. | Figures 5.4–5.5 |
 
 The numbering follows the original analysis notebooks. Numbers 06 and 07 belonged to earlier versions of the regressions and are not part of this release.
 
